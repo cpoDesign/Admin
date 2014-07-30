@@ -15,9 +15,42 @@ angular.module('myApp.controllers', []).
     .controller('BlankPageCtrl', [function() {
 
   }])
-    .controller('TablesCtrl', [function() {
+    .controller('TablesCtrl', ['$scope', function($scope) {
 
+        $scope.priorities = [
+            {id:1, name:'priority 1',
+                actions:[
+                    {id:2, name:'action 2'},
+                    {id:3, name:'action 3'}
+                ]},
+            {id:2, name:'priority 2',
+                actions:[
+                    {id:5, name:'action 5'},
+                    {id:6, name:'action 6'}
+                ]}
+        ];
   }])
+    .controller('UpdateActionsCtrl', function($scope){
+        $scope.isInEdit = false;
+        $scope.editingAction = null;
+        $scope.edit =function(action){
+            $scope.editingAction = {
+                id:action.id,
+                name:action.name
+            };
+
+            // console.log(action);
+            $scope.isInEdit = true;
+        }
+        $scope.saveChanges = function(editingAction){
+            //console.log(editingAction);
+
+            $scope.action = editingAction;
+            $scope.isInEdit = false;
+            $scope.editingAction = null;
+        }
+    })
+
     .controller('DashboardCtrl', [function() {
 
   }])
