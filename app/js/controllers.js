@@ -11,4 +11,10 @@ angular.module('myApp.controllers', []).
   }])
     .controller('LoginCtrl', [function() {
 
+  }])
+    .controller('BlankPageCtrl', [function() {
+
+  }])
+    .controller('TablesCtrl', [function() {
+
   }]);
