@@ -17,4 +17,19 @@ angular.module('myApp.controllers', []).
   }])
     .controller('TablesCtrl', [function() {
 
+  }])
+    .controller('DashboardCtrl', [function() {
+
+  }])
+    .controller('FormsCtrl', [function() {
+
+  }])
+    .controller('ChartsCtrl', [function() {
+
+  }])
+    .controller('GridCtrl', [function() {
+
+  }])
+    .controller('ElementsCtrl', [function() {
+
   }]);
