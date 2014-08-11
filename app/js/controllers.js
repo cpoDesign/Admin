@@ -9,6 +9,12 @@ angular.module('myApp.controllers', []).
   .controller('MyCtrl2', [function() {
 
   }])
+    .controller("MessagesCtrl", function(){
+        // will be used for drop down messages for an user
+    })
+    .controller("NotificationCtrl", function(){
+        // will be used for drop down notification for an user
+    })
     .controller('LoginCtrl', [function() {
 
   }])
