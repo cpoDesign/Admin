@@ -74,7 +74,15 @@ angular.module('myApp.services', [])
     }
 });
 
+angular.module('myApp',[])
+    .config(function($httpProvider){
+        // build our interceptor here
+    });
+
 
 angular.module('myApp.services.loginSvc',
     function loginSvc ($scope){
     });
+
+
+
