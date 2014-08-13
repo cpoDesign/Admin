@@ -1,0 +1,35 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                 <small>Message</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="#/messages">Messages</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-file"></i> Message
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            <small>From</small>
+            {{message.from}}
+        </h1>
+
+        <div class="well">
+            <p>{{message.text}}</p>
+        </div>
+    </div>
+    </div>
+</div>

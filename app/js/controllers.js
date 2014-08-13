@@ -2,15 +2,31 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('myApp.controllers', [])
 
-  }])
-  .controller('MyCtrl2', [function() {
+    .controller("MessagesOverViewCtrl", ['$scope', '$location', 'messagesSvc', function($scope, $location, messagesSvc){
 
-  }])
-    .controller("MessagesCtrl", function(){
-        // will be used for drop down messages for an user
+        $scope.messages=messagesSvc.getLastMessages(3);
+
+        $scope.goToMessage = function(id){
+            $location.path('/messages/'+id);
+        }
+
+        $scope.showAllMessages = function(){
+            $location.path('/messages');
+        }
+    }])
+    .controller("MessagesCtrl", function($scope, $location, messagesSvc){
+        $scope.messages=messagesSvc.getMessages();
+
+        $scope.goToMessage = function(id){
+            $location.path('/messages/'+id);
+        }
+    })
+    .controller("MessageDetailCtrl", function($scope, message){
+
+        console.log(message);
+        $scope.message=message;
     })
     .controller("NotificationCtrl", function(){
         // will be used for drop down notification for an user
@@ -57,9 +73,18 @@ angular.module('myApp.controllers', []).
         }
     })
 
-    .controller('DashboardCtrl', [function() {
+    .controller('DashboardCtrl', function($scope, messagesSvc) {
+        $scope.unreadMessages = messagesSvc.unreadMessages();
 
-  }])
+        $scope.messagesText = function(){
+            if($scope.unreadMessages==0){
+                return 'No unread messages';
+            }else{
+                return 'New messages';
+            }
+        }
+
+  })
     .controller('FormsCtrl', [function() {
 
   }])
