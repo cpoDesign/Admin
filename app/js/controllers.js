@@ -25,7 +25,6 @@ angular.module('myApp.controllers', [])
     })
     .controller("MessageDetailCtrl", function($scope, message){
 
-        console.log(message);
         $scope.message=message;
     })
     .controller("NotificationCtrl", function(){
@@ -61,12 +60,9 @@ angular.module('myApp.controllers', [])
                 name:action.name
             };
 
-            // console.log(action);
             $scope.isInEdit = true;
         }
         $scope.saveChanges = function(editingAction){
-            //console.log(editingAction);
-
             $scope.action = editingAction;
             $scope.isInEdit = false;
             $scope.editingAction = null;
