@@ -6,9 +6,50 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', [])
-    .value('version', '0.1.1');
+    .value('version', '0.1.1')
+    .constant('ACCESS_LEVELS', {
+        pub:1,
+        user:2,
+        admin:9
+    });
+
 
 angular.module('myApp.services', [])
+    .factory('Auth',
+function($cookieStore, ACCESS_LEVELS){
+    var _user = $cookieStore.get('user');
+    var setUser = function(user){
+        if(!user.role || user.role <0){
+            user.role = ACCESS_LEVELS.pub
+        }
+
+        _user = user;
+        $cookieStore.put('user',_user);
+    }
+
+    return{
+        isAuthorised: function(lvl){
+            return _user.role >=lvl;
+        },
+        setUser: setUser, isLoggedIn: function(){
+            return _user? true: false;
+        },
+        getUser: function(){
+            return _user;
+        },
+        getId: function(){
+            return _user ? _user._id: null;
+        },
+        getToken: function(){
+            return _user ? _user.token :''
+        },
+        logout: function(){
+            $cookieStore.remote(user);
+            _user =null;
+        }
+    }
+})
+
     .factory('messagesSvc',function messagesSvc() {
     var messages =[{
         'from':'John Smith',
