@@ -41,25 +41,6 @@ angular.module('myApp.services', [])
             }
         }
     });
-//
-//angular.module('myApp', [])
-//    // This is checking whether user has access rights to see the page
-//    .run(function ($rootScope, $location, Auth) {
-//        // set a watch on $routeChangeStart
-//
-//        $rootScope.$on('$routeChangeStart', function (evt, next, curr) {
-//            console.log('$routeChangeStart triggered');
-//
-//            if (!Auth.isAuthorised(next.access_level)) {
-//                if (Auth.isLoggedIn()) {
-//                    // the user is logged in but does not have permission to view the view
-//                    $location.path('/');
-//                } else {
-//                    $location.path('/login');
-//                }
-//            }
-//        })
-//    });
 
 angular.module('myApp.services', [])
     .factory('messagesSvc', function messagesSvc() {
@@ -122,6 +103,165 @@ angular.module('myApp.services', [])
             getMessage: function (messageId) {
                 return _.find(messages, function (message) {
                     return message.id == messageId;
+                })
+            }
+        }
+    });
+
+angular.module('myApp.services', [])
+    .factory('taskSvc', function taskSvc() {
+        var messages = [
+            {
+                'from': 'John Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '1',
+                'read': false
+            },
+            {
+                'from': 'James Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '2',
+                'read': true
+            },
+            {
+                'from': 'George Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '3',
+                'read': false
+            },
+            {
+                'from': 'Jade Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '4',
+                'read': true
+            },
+            {
+                'from': 'Lauren Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '5',
+                'read': false
+            },
+            {
+                'from': 'John Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '6',
+                'read': true
+            }
+        ];
+
+        return{
+            getLastMessages: function (numberOfMessages) {
+                return _.last(messages, numberOfMessages);
+            },
+            unreadMessages: function () {
+                // todo: add correct implementation
+                return messages.length;
+            },
+            getMessages: function () {
+                return messages;
+            },
+            getMessage: function (messageId) {
+                return _.find(messages, function (message) {
+                    return message.id == messageId;
+                })
+            }
+        }
+    });
+
+angular.module('myApp.services', [])
+    .factory('transactionSvc', function transactionSvc() {
+        var transactions = [
+            {
+                'from': 'John Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '1',
+                'read': false
+            }
+        ];
+
+        return{
+            getLastMessages: function (numberOfMessages) {
+                return _.last(transactions, numberOfMessages);
+            },
+            unreadMessages: function () {
+                // todo: add correct implementation
+                return transactions.length;
+            },
+            getMessages: function () {
+                return transactions;
+            },
+            getMessage: function (messageId) {
+                return _.find(transactions, function (item) {
+                    return item.id == messageId;
+                })
+            }
+        }
+    });
+
+angular.module('myApp.services', [])
+    .factory('ordersSvc', function ordersSvc() {
+        var orders = [
+            {
+                id:1,
+                orderDate: '2014/10/01',
+                orderTime: '3:29 PM',
+                amount: 321.10
+            }
+        ];
+
+        return{
+
+//            getLastMessages: function (numberOfMessages) {
+//                return _.last(orders, numberOfMessages);
+//            },
+//            unreadMessages: function () {
+//                // todo: add correct implementation
+//                return orders.length;
+//            },
+//            getMessages: function () {
+//                return orders;
+//            },
+//            getMessage: function (orderId) {
+//                return _.find(orders, function (orders) {
+//                    return orders.id == orderId;
+//                })
+//            }
+        }
+    });
+
+angular.module('myApp.services', [])
+    .factory('supportSvc', function supportSvc() {
+        var support = [
+            {
+                'from': 'John Smith',
+                'created': Date.now(),
+                'text': 'Lorem ipsum dolor sit amet, consectetur...',
+                'id': '1',
+                'read': false
+            }
+        ];
+
+        return{
+            getLastMessages: function (numberOfMessages) {
+                return _.last(support, numberOfMessages);
+            },
+            unreadMessages: function () {
+                // todo: add correct implementation
+                return messages.length;
+            },
+            getMessages: function () {
+                return support;
+            },
+            getMessage: function (messageId) {
+                return _.find(support, function (support) {
+                    return support.id == messageId;
                 })
             }
         }
