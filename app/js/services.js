@@ -187,21 +187,21 @@ angular.module('myApp.services', [])
         ];
 
         return{
-            getLastMessages: function (numberOfMessages) {
-                return _.last(transactions, numberOfMessages);
-            },
-            unreadMessages: function () {
-                // todo: add correct implementation
-                return transactions.length;
-            },
-            getMessages: function () {
-                return transactions;
-            },
-            getMessage: function (messageId) {
-                return _.find(transactions, function (item) {
-                    return item.id == messageId;
-                })
-            }
+//            getLastMessages: function (numberOfMessages) {
+//                return _.last(transactions, numberOfMessages);
+//            },
+//            unreadMessages: function () {
+//                // todo: add correct implementation
+//                return transactions.length;
+//            },
+//            getMessages: function () {
+//                return transactions;
+//            },
+//            getMessage: function (messageId) {
+//                return _.find(transactions, function (item) {
+//                    return item.id == messageId;
+//                })
+//            }
         }
     });
 
@@ -229,8 +229,8 @@ angular.module('myApp.services', [])
 //                return orders;
 //            },
 //            getMessage: function (orderId) {
-//                return _.find(orders, function (orders) {
-//                    return orders.id == orderId;
+//                return _.find(orders, function (order) {
+//                    return order.id == orderId;
 //                })
 //            }
         }
@@ -249,21 +249,21 @@ angular.module('myApp.services', [])
         ];
 
         return{
-            getLastMessages: function (numberOfMessages) {
-                return _.last(support, numberOfMessages);
-            },
-            unreadMessages: function () {
-                // todo: add correct implementation
-                return messages.length;
-            },
-            getMessages: function () {
-                return support;
-            },
-            getMessage: function (messageId) {
-                return _.find(support, function (support) {
-                    return support.id == messageId;
-                })
-            }
+//            getLastMessages: function (numberOfMessages) {
+//                return _.last(support, numberOfMessages);
+//            },
+//            unreadMessages: function () {
+//                // todo: add correct implementation
+//                return messages.length;
+//            },
+//            getMessages: function () {
+//                return support;
+//            },
+//            getMessage: function (messageId) {
+//                return _.find(support, function (supportItem) {
+//                    return supportItem.id == messageId;
+//                })
+//            }
         }
     });
 
