@@ -1,0 +1,76 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Templates
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-edit"></i> Templates
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+    <div class="col-lg-6">
+        <h1>Template</h1>
+        <form role="form">
+            <div class="form-group">
+                <label for="name">Text Area</label>
+                <textarea class="form-control" rows="10">
+<h1>@model.Title</h1>
+<div>
+   @model.Content
+</div>
+<div>
+    <label>Author</label> @model.Author
+</div>
+                </textarea>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-lg-6">
+        <h1>Template variables</h1>
+
+        <form role="form">
+            <div class="form-group">
+                <label for="variables">Variables</label>
+                <textarea class="form-control" rows="10">
+model.Title= "Templating example"
+model.Content = "this is content written by John"
+model.Author = "John Doe"
+                </textarea>
+            </div>
+        </form>
+    </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-2 text-center">
+            <button type="submit" class="btn btn-success" ng-click="renderTemplate()">Render template</button>
+        </div>
+        <div class="col-lg-5"></div>
+
+    </div>
+
+    <!-- /.container-fluid -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Template result</h1>
+            <div ng-bind-html="htmlTemplateResult">
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <div class="row"><br></div>
+</div>

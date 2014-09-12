@@ -35,6 +35,14 @@ angular.module('myApp.controllers', [])
   }])
     .controller('BlankPageCtrl', [function() {
 
+  }]).controller('TemplateCtrl', ["$scope", function($scope) {
+
+        $scope.htmlTemplateResult = '<p>No template has been rendered yet</p>';
+
+        $scope.renderTemplate = function(){
+            $scope.htmlTemplateResult = '<div>this is content written by John</div><div><label>Author</label>John Doe</div>';
+        }
+
   }])
     .controller('TablesCtrl', ['$scope', function($scope) {
 

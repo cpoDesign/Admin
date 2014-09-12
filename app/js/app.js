@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
+  'ngSanitize'
 ])
     .constant('ACCESS_LEVELS',{
 
@@ -28,6 +29,7 @@ angular.module('myApp', [
    $routeProvider.when('/elements', {templateUrl: 'partials/elements.html', controller: 'ElementsCtrl', access_level: ACCESS_LEVELS.user});
    $routeProvider.when('/elements', {templateUrl: 'partials/elements.html', controller: 'ElementsCtrl', access_level: ACCESS_LEVELS.user});
    $routeProvider.when('/messages', {templateUrl: 'partials/messages.html', controller: 'MessagesCtrl', access_level: ACCESS_LEVELS.user});
+   $routeProvider.when('/template', {templateUrl: 'partials/template.html', controller: 'TemplateCtrl', access_level: ACCESS_LEVELS.user});
    $routeProvider.when('/messages/:messageId',{
                 templateUrl: 'partials/messageDetail.html',
                 controller: 'MessageDetailCtrl',
