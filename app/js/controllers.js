@@ -6,7 +6,7 @@ angular.module('myApp.controllers', [])
 
     .controller("MessagesOverViewCtrl", ['$scope', '$location', 'messagesSvc', function($scope, $location, messagesSvc){
 
-        $scope.messages=messagesSvc.getLastMessages(3);
+        $scope.messages = messagesSvc.getLastMessages(3);
 
         $scope.goToMessage = function(id){
             $location.path('/messages/'+id);
